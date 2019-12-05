@@ -27,9 +27,7 @@ print(type(data))
 '''
 #print(dict_values)
 
-print(json.dumps(dict_values))
-
-resp = requests.post("http://localhost:3002/predict", \
+resp = requests.post("http://0.0.0.0:8000/predict", \
                     data = json.dumps(dict_values),\
                     headers= header)
 

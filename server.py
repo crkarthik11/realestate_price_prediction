@@ -52,10 +52,13 @@ def apicall():
             clf = pickle.load(f)
 
         print("The model has been loaded...doing predictions now...")
+
+        
+        #predictions = clf.predict(data)[0]
         predictions = clf.predict(data)
         predictions = round(predictions[0])
         price_pred = {'Predicted Price':predictions} 
-        responses = jsonify(price_pred)    
+        responses = jsonify(price_pred)
         responses.status_code = 200
         return (responses)
     
@@ -71,4 +74,4 @@ def bad_request(error=None):
 
 	return resp
 
-app.run(host='0.0.0.0', port=3002, debug=True)
+app.run(host='0.0.0.0', port=3000, debug=True)

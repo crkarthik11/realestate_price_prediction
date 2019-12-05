@@ -1,4 +1,4 @@
-FROM crkarthik11/python-sklearn
+FROM ecoron/python36-sklearn
 
 WORKDIR /apps
 
@@ -8,6 +8,6 @@ RUN apt-get update \
 
 COPY *.py /apps/
 COPY model.pk /apps/
-EXPOSE 3002
+EXPOSE 3000
 
 CMD ["python", "server.py"]
